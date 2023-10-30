@@ -8,6 +8,9 @@ const initialState = {
   error: false,
   store: [],
   categoriesProducts: [],
+  singleproduct: {},
+  sigleLoading: false,
+  sigleError: false,
 };
 
 export const Appcontext = createContext();
@@ -25,11 +28,24 @@ export const AppProvider = ({ children }) => {
       dispatch({ type: "error" });
     }
   };
+  // single prducts
+  const getSingleProducts = async (url) => {
+    dispatch({ type: "Loading" });
+    try {
+      const result = await axios.get(url);
+      const singleProduct = await result.data;
+      dispatch({ type: "sigle_product_api", payload: singleProduct });
+    } catch {
+      dispatch({ type: "error" });
+    }
+  };
   useEffect(() => {
     getProduct(API);
   }, []);
   return (
-    <Appcontext.Provider value={{ ...state }}>{children}</Appcontext.Provider>
+    <Appcontext.Provider value={{ ...state, getSingleProducts }}>
+      {children}
+    </Appcontext.Provider>
   );
 };
 //  custom hooks

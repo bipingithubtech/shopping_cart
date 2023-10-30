@@ -47,3 +47,53 @@ color: black;
     text-decoration: none;
     
 }
+.nav-home{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 7rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+    background-color: rgb(200, 236, 236);
+
+
+}
+.icons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    border-bottom: 1px solid #ccc;
+}
+.container{
+    width: 50%;
+    margin: auto;
+}
+.product_data{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2rem;
+}
+ .grid-four-coloun{
+    display: grid;
+    grid-template-columns: 1fr 1.2fr .5fr .8fr ;
+       }
+
+      .btnstyle{
+        width: 2rem;
+        height: 2rem;
+        background-color: #000;
+        border-radius: 50%;
+        margin-left: 1rem;
+        border: none;
+        outline: none;
+        opacity: .05;
+        cursor: pointer;
+
+    }
+    .active{
+        opacity:1
+    }

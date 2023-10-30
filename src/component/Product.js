@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import FormatNumber from "../Helpers/FormatNumber";
 
 const Product = (element) => {
   const { name, id, image, category, price } = element;
@@ -11,7 +12,11 @@ const Product = (element) => {
         </figure>
 
         <div style={{ marginLeft: "50px" }}>
-          {name} <span style={{ marginLeft: "50px" }}> {price}</span>
+          {name}{" "}
+          <span style={{ marginLeft: "50px" }}>
+            {" "}
+            {<FormatNumber price={price} />}
+          </span>
         </div>
       </div>
     </NavLink>

@@ -21,6 +21,23 @@ const reducer = (state, action) => {
         error: true,
         loading: false,
       };
+    case "Loading":
+      return {
+        ...state,
+        sigleLoading: true,
+      };
+    case "sigle_product_api":
+      return {
+        ...state,
+        sigleLoading: false,
+        singleproduct: action.payload,
+      };
+    case "error":
+      return {
+        ...state,
+        sigleError: true,
+      };
+
     default:
       return state;
   }
