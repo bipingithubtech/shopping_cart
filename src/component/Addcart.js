@@ -15,14 +15,14 @@ const Addcart = ({ product }) => {
   return (
     <div className="container">
       <div className="colors">
-        <p style={{ display: "flex" }}>
+        <p style={{ display: "flex", justifyContent: "space-between" }}>
           {" "}
           Colors:
-          {colors.map((color, ind) => {
+          {colors.map((color) => {
             return (
               <button
                 style={{ backgroundColor: color }}
-                key={ind}
+                key={color.id}
                 className={colour === color ? "btnstyle active" : "btnstyle"}
                 onClick={() => setColour(color)}
               >

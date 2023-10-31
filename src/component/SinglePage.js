@@ -16,7 +16,7 @@ const SinglePage = () => {
     name,
 
     description,
-
+    image,
     stock,
     price,
     reviews,
@@ -45,6 +45,17 @@ const SinglePage = () => {
       <Pagenavigation title={name} />
       <div className="container">
         <div className="grid-two-column">
+          <div>
+            {image &&
+              image.map((img) => {
+                return (
+                  <figure key={id}>
+                    <img style={{ width: "200px" }} src={img.url} alt="" />
+                  </figure>
+                );
+              })}
+          </div>
+
           <div className="product_data">
             <h1>{name}</h1>
             <p> Reviews:-{reviews}</p>
@@ -59,26 +70,26 @@ const SinglePage = () => {
               <FormatNumber price={price} />
             </p>
             <p>{description}</p>
-          </div>
-          <div className="icons">
             <div className="icons">
-              <MdOutlineSecurity />
-              <p>2 year waranty</p>
+              <div className="icons">
+                <MdOutlineSecurity />
+                <p>2 year waranty</p>
+              </div>
+              <div className="icons">
+                <TbTruckDelivery />
+                <p>free delivery</p>
+              </div>
+              <div className="icons">
+                <TbReplaceFilled />
+                <p>replace within 5 days</p>
+              </div>
             </div>
-            <div className="icons">
-              <TbTruckDelivery />
-              <p>free delivery</p>
+            <div className="pro_data_info">
+              <p>
+                Available:
+                {stock > 0 ? "in stock" : "out of stock"}
+              </p>
             </div>
-            <div className="icons">
-              <TbReplaceFilled />
-              <p>replace within 5 days</p>
-            </div>
-          </div>
-          <div className="pro_data_info">
-            <p>
-              Available:
-              {stock > 0 ? "in stock" : "out of stock"}
-            </p>
           </div>
         </div>
         <hr />

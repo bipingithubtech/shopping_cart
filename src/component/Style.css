@@ -115,4 +115,8 @@ color: black;
         display: grid;
         grid-template-columns:.8fr 1fr
     }
+    .grid-two-column{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
     
