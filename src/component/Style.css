@@ -97,3 +97,22 @@ color: black;
     .active{
         opacity:1
     }
+    .container {
+        max-width: 120rem;
+        margin: 0 auto;
+      }
+
+    .grid{
+        display: grid;
+        grid-template-columns: .8fr 1fr;
+    }
+    .template{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+    }
+    .template_grid{
+        display: grid;
+        grid-template-columns:.8fr 1fr
+    }
+    

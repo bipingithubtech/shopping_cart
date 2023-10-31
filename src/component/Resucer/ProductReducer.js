@@ -37,6 +37,16 @@ const reducer = (state, action) => {
         ...state,
         sigleError: true,
       };
+    case "set_grid":
+      return {
+        ...state,
+        grid: true,
+      };
+    case "set_list":
+      return {
+        ...state,
+        grid: false,
+      };
 
     default:
       return state;

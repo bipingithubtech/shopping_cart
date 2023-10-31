@@ -11,6 +11,7 @@ const initialState = {
   singleproduct: {},
   sigleLoading: false,
   sigleError: false,
+  grid: true,
 };
 
 export const Appcontext = createContext();
@@ -39,11 +40,19 @@ export const AppProvider = ({ children }) => {
       dispatch({ type: "error" });
     }
   };
+  const setGrid = () => {
+    dispatch({ type: "set_grid" });
+  };
+  const setList = () => {
+    dispatch({ type: "set_list" });
+  };
   useEffect(() => {
     getProduct(API);
   }, []);
   return (
-    <Appcontext.Provider value={{ ...state, getSingleProducts }}>
+    <Appcontext.Provider
+      value={{ ...state, getSingleProducts, setGrid, setList }}
+    >
       {children}
     </Appcontext.Provider>
   );
