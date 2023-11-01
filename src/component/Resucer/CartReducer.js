@@ -16,6 +16,16 @@ const reducer = (state, action) => {
       addCart: [...state.addCart, CartComponent],
     };
   }
+  if (action.type === "remove_item") {
+    let updateArr = state.addCart.filter((currenElm) => {
+      return currenElm.id !== action.payload;
+    });
+
+    return {
+      ...state,
+      addCart: updateArr,
+    };
+  }
   return state;
 };
 export default reducer;

@@ -1,7 +1,10 @@
+import CartItem from "./CartIte";
+
 import { useCartContext } from "./constext/CartContext";
 
 const Cart = () => {
   const { addCart } = useCartContext();
+
   return (
     <div className="container">
       <div className="gri-five-coumn">
@@ -12,6 +15,11 @@ const Cart = () => {
         <p>Remove</p>
       </div>
       <hr />
+      <div className="cart-items">
+        {addCart.map((currelm) => {
+          return <CartItem key={currelm.id} {...currelm} />;
+        })}
+      </div>
     </div>
   );
 };

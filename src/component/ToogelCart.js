@@ -7,7 +7,7 @@ const ToogelCart = ({ setDecrimennt, setIncriment, amount }) => {
           display: "flex",
           marginTop: "20px",
           justifyContent: "space-around",
-          backgroundColor: "#060a07",
+
           color: "#ffffff",
         }}
       >
