@@ -4,12 +4,15 @@ import "../Style.css";
 import { Outlet } from "react-router-dom";
 import Navbar from "../Navbar";
 import { AppProvider } from "../constext/Context";
+import { CartProvider } from "../constext/CartContext";
 
 const Root = () => {
   return (
     <AppProvider>
-      <Navbar />
-      <Outlet />
+      <CartProvider>
+        <Navbar />
+        <Outlet />
+      </CartProvider>
     </AppProvider>
   );
 };

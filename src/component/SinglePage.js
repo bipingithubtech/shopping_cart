@@ -10,7 +10,7 @@ import Addcart from "./Addcart";
 const api = "https://api.pujakaitem.com/api/products";
 const SinglePage = () => {
   const { singleproduct, sigleLoading, getSingleProducts } = useGlobal();
-  console.log(singleproduct);
+  // console.log(singleproduct);
   const {
     id: alias,
     name,
@@ -23,7 +23,7 @@ const SinglePage = () => {
   } = singleproduct;
 
   const { id } = useParams();
-  console.log(id);
+
   useEffect(() => {
     getSingleProducts(`${api}?id=${id}`);
   }, [id]);

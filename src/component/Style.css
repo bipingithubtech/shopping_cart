@@ -90,16 +90,17 @@ color: black;
         margin-left: 1rem;
         border: none;
         outline: none;
-        opacity: .05;
+        opacity: .5;
         cursor: pointer;
 
     }
     .active{
-        opacity:1
+        opacity:2
     }
     .container {
         max-width: 120rem;
-        margin: 0 auto;
+        margin:  auto;
+
       }
 
     .grid{
@@ -117,6 +118,10 @@ color: black;
     }
     .grid-two-column{
         display: grid;
-        grid-template-columns: 1fr 2fr;
+        grid-template-columns: 2fr 3fr;
+    }
+    .gri-five-coumn{
+        display: grid;
+        grid-template-columns: 2fr 2fr 2fr 2fr
     }
     

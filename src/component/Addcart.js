@@ -1,8 +1,11 @@
 import { FaCheck } from "react-icons/fa";
 import { useState } from "react";
 import ToogelCart from "./ToogelCart";
+import { NavLink } from "react-router-dom";
+import { useCartContext } from "./constext/CartContext";
 
 const Addcart = ({ product }) => {
+  const { addtocart } = useCartContext();
   const { id, colors, stock } = product;
   const [colour, setColour] = useState(colors[0]);
   const [amount, setAmount] = useState(1);
@@ -21,7 +24,7 @@ const Addcart = ({ product }) => {
           {colors.map((color) => {
             return (
               <button
-                style={{ backgroundColor: color }}
+                style={{ backgroundColor: color, border: "solid 3px black" }}
                 key={color.id}
                 className={colour === color ? "btnstyle active" : "btnstyle"}
                 onClick={() => setColour(color)}
@@ -38,6 +41,12 @@ const Addcart = ({ product }) => {
         setIncriment={setIncriment}
         amount={amount}
       />
+      <NavLink
+        to="/cart"
+        onClick={() => addtocart(id, product, colors, amount)}
+      >
+        <button>Add To Cart</button>
+      </NavLink>
     </div>
   );
 };
