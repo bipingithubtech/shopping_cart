@@ -29,6 +29,7 @@ export const AppProvider = ({ children }) => {
       dispatch({ type: "error" });
     }
   };
+
   // single prducts
   const getSingleProducts = async (url) => {
     dispatch({ type: "Loading" });
@@ -46,12 +47,22 @@ export const AppProvider = ({ children }) => {
   const setList = () => {
     dispatch({ type: "set_list" });
   };
+  const sort = () => {
+    dispatch({ type: "sorts" });
+  };
+
   useEffect(() => {
     getProduct(API);
   }, []);
   return (
     <Appcontext.Provider
-      value={{ ...state, getSingleProducts, setGrid, setList }}
+      value={{
+        ...state,
+        getSingleProducts,
+        setGrid,
+        setList,
+        sort,
+      }}
     >
       {children}
     </Appcontext.Provider>

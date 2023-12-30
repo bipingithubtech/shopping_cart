@@ -1,5 +1,5 @@
 import React from "react";
-import FilterSection from "./categoriesSection/FilterSection";
+
 import Sort from "./categoriesSection/Sort";
 import ProductSection from "./categoriesSection/ProductSection";
 
@@ -7,9 +7,7 @@ const Categories = () => {
   return (
     <div className="container">
       <div className=" grid">
-        <div className="section1">
-          <FilterSection />
-        </div>
+        <div className="section1"></div>
         <div className="product-view">
           <div className="sortFilter">
             <Sort />

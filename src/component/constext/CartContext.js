@@ -3,7 +3,7 @@ import reducer from "../Resucer/CartReducer";
 
 const getLocaldata = () => {
   let localStorageDate = localStorage.getItem("localData");
-  console.log(localStorageDate);
+  // console.log(localStorageDate);
   if (localStorageDate) {
     return JSON.parse(localStorage.getItem("localData"));
   } else {
